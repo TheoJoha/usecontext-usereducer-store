@@ -9,7 +9,8 @@ const Home = () => {
       <Navbar />
       <h1>useContext + useReducer Store</h1>
       <h2 className="text-4xl tracking-wide py-4">New In</h2>
-      <div className="flex flex-col lg:grid lg:grid-cols-3">
+      <div className="flex flex-col lg:grid lg:grid-cols-3
+      px-8">
         {storeData.map((item, i) => (
           <Product key={i} item={item} />
         ))}

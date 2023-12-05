@@ -1,10 +1,12 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import Basket from "./pages/Basket"
 import Home from "./pages/Home"
+import { StoreProvider } from "./context-and-reducer/StoreContext";
 
 
 function App() {
   return (
+    <StoreProvider>
    <Router>
     <Routes>
       <Route path="/" element={<Home />}/>
@@ -12,6 +14,7 @@ function App() {
 
     </Routes>
    </Router>
+   </StoreProvider>
   );
 }
 
