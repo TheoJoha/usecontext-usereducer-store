@@ -1,5 +1,13 @@
+import {useContext} from "react"
+import {StoreContext} from "../context-and-reducer/StoreContext"
+
 
 const Product = ({ item }) => {
+    const {addToBasket} = useContext(StoreContext)
+
+    const handleAdd = () => {
+        addToBasket(item)
+    }
     return (
         <div className="mx-auto px-8 border border-gray font-semibold
         rounded-lg">
@@ -9,7 +17,9 @@ const Product = ({ item }) => {
                 <p className="text-lg">{item.price}</p>
             </div>
             <button className="bg-indigo-500 text-white text-lg
-            rounded-full font-medium">Add to basket</button>
+            rounded-full font-medium"
+            onClick={handleAdd}
+            >Add to basket</button>
         </div>
     )
 }
